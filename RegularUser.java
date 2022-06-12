@@ -22,18 +22,6 @@ public class RegularUser {
         }
     }
 
-    private SLNode<E>[] search (E target) {
-        SLNode<E>[] pred = (SLNode<E>[]) new SLNode[maxLevel];
-        SLNode<E> current = head;
-        for (int i = current.links.length‐1; i >= 0; i‐‐) {
-        while (current.links[i] != null
-        && current.links[i].data.compareTo(target) < 0) {
-        current = current.links[i];
-        }
-        pred[i] = current;
-        }
-        return pred;
-       }
-
+    
 
 }
