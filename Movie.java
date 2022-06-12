@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 /** A Movie Class for representing Movie.
  * Comments class has to be implemented!!
  * Essential setters and getters methods have been implemented!
@@ -72,6 +75,15 @@ public class Movie {
   public void set_show_id(String id)
   {
     show_id = id;
+  }
+
+  public float get_imdb_score()
+  {
+    return imdb_score;
+  }
+  public Set<Comment> get_commnets()
+  {
+    return comments;
   }
   public String get_show_id()
   {
