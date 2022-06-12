@@ -14,6 +14,7 @@ public class Regular_User {
 	Queue<String> que = new LinkedList<String>();
 	Stack<String> stack = new Stack<String>();
 	List<String> favorites = new LinkedList<String>();
+	
 	public String getName() {
 		return name;
 	}
