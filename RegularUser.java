@@ -9,6 +9,27 @@ public class RegularUser {
     private String email;
     private String password;
 
+	private SkipList<String> temp = new SkipList<>();
+
+	public RegularUser()
+	{
+		name = "NoNameYet";
+		surname= "NoSurNameYet";
+		age = -1;
+		email = "NoEmailYet";
+		password = "NoPasswordYet";
+	}
+	
+	public RegularUser(String name,String surname,int age,String email,String password)
+	{
+		this.name = name;
+		this.surname = surname;
+		this.age = age;
+		this.email = email;
+		this.password = password;
+	}
+
+
     public String getName() {
 		return name;
 	}
@@ -38,6 +59,37 @@ public class RegularUser {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	
+	public SkipList<String> get_watchlist()
+	{
+		return temp;
+	}
+
+	public boolean add_to_watchlist(String movie)
+	{   
+		if(movie.equals("null"))
+		throw new NullPointerException();
+		temp.insert(movie);
+		return true;
+	}
+
+	public boolean remove_from_watchlist(String movie)
+	{
+		
+		temp.delete(movie);
+		if(temp.flag)
+		{  
+			temp.flag = false;
+			return true;
+		}
+
+		else
+		{  
+			temp.flag = false;
+			return false;
+		}
 	}
 	
 
