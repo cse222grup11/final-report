@@ -3,7 +3,13 @@ import java.util.List;
 
 public class RegularUser {
 
-
+    private String name;
+    private String surnmame;
+    private int age;
+    private String email;
+    private String password;
+    
+    SLNode<Movie> favourities;
 
     static class SLNode<E>
     {
