@@ -54,7 +54,7 @@ public class Movie {
   public boolean remove_from_comments(Comment com){
     return comments.remove(com);
   }
-  @Override
+  
   public boolean equals(Movie m){
     if(get_show_id() == m.get_show_id() &&
       get_release_date() == m.get_release_date() &&
@@ -81,7 +81,7 @@ public class Movie {
   {
     return imdb_score;
   }
-  public Set<Comment> get_commnets()
+  public Set<Comment> get_comments()
   {
     return comments;
   }
@@ -163,11 +163,6 @@ public class Movie {
   public void set_description(String ss)
   {
     description = ss;
-  }
-
-  public List<Comment> get_comments()
-  {
-    return comments;
   }
 
   public float get_IMDB_score()
