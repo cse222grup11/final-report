@@ -1,5 +1,8 @@
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Scanner;
 
 public class RegularUser {
 
@@ -27,6 +30,30 @@ public class RegularUser {
 		this.age = age;
 		this.email = email;
 		this.password = password;
+	}
+
+	private void fill_watchlist_queue()throws FileNotFoundException{
+		FileInputStream fis=new FileInputStream("UsersDB.txt");       
+		Scanner sc=new Scanner(fis);
+		String line="";
+		while(sc.hasNextLine()) {
+			line = sc.nextLine();
+			if(line.equals(email))
+				break;			
+		}  
+		while(sc.hasNextLine()) {
+			line = sc.nextLine();
+			if(line.equals("watchlistBegin"))
+				break;			
+		}
+		
+		while(sc.hasNextLine() && !line.equals("##")) {
+			line = sc.nextLine();
+			if(line.equals("watchlistEnd"))
+				break;			
+			temp.insert(line);
+
+		}
 	}
 
 
