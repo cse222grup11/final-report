@@ -27,7 +27,7 @@ public class BinarySearchTree < E
   }
 
   /** Recursive find method.
-      @param localRoot The local subtree’s root
+      @param localRoot The local subtrees root
       @param target The object being sought
       @return The object, if found, otherwise null
    */
@@ -67,7 +67,7 @@ public class BinarySearchTree < E
    */
   private Node < E > add(Node < E > localRoot, E item) {
     if (localRoot == null) {
-      // item is not in the tree — insert it.
+      // item is not in the tree  insert it.
       addReturn = true;
       return new Node < E > (item);
     }
@@ -156,7 +156,7 @@ public class BinarySearchTree < E
         }
         else {
           // Search for the inorder predecessor (ip) and
-          // replace deleted node’s data with ip.
+          // replace deleted nodes data with ip.
           localRoot.data = findLargestChild(localRoot.left);
           return localRoot;
         }

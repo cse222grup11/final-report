@@ -9,7 +9,7 @@ public class Regular_User {
 	String name;
 	String surname;
 	int age;
-	static String email;
+	String email;
 	String password;
 	Queue<String> que = new LinkedList<String>();
 	Stack<String> stack = new Stack<String>();
@@ -71,6 +71,8 @@ public class Regular_User {
 			que.add(line);
 
 		}
+
+		sc.close();
 	}
 	 boolean add_to_watchlist(String movie) throws IOException{
 		//this.update_watch_list(movie);
@@ -118,6 +120,7 @@ public class Regular_User {
 				break;			
 			favorites.add(line);
 		}
+		sc.close();
 	}
 	boolean add_to_favourites(String movie) {
 		return favorites.add(movie);
@@ -151,6 +154,7 @@ public class Regular_User {
 				break;			
 			stack.add(line);
 		}
+		sc.close();
 	}
 	boolean add_to_history(String movie) {
 		if(stack.push(movie) == null) return false;
@@ -318,6 +322,8 @@ public class Regular_User {
 			
 		}
 		
+		prevLine.close();
+		raf.close();
 		
 
 		
@@ -340,7 +346,6 @@ public class Regular_User {
 			System.out.println(e.getMessage());
 		}
 		//System.out.println("OK!!");
-		
 		
 	}
 	

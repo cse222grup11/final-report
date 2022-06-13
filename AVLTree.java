@@ -28,7 +28,7 @@ public class AVLTree < E
     /** Constant to indicate right-heavy */
     public static final int RIGHT_HEAVY = 1;
 
-    /** balance is right subtree height – left subtree height */
+    /** balance is right subtree height  left subtree height */
     private int balance;
 
     // Methods

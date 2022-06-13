@@ -8,6 +8,7 @@ public class Report {
 	private Regular_User reporting_user;
 	private Regular_User reported_user;
 	private Comment reported_comment;
+	private Movie commented_movie;
 	
 	Report(){
 		
@@ -40,5 +41,13 @@ public class Report {
 
 	public void setReported_comment(Comment reported_comment) {
 		this.reported_comment = reported_comment;
+	}
+
+	public Movie get_commented_movie(){
+		return commented_movie;
+	}
+
+	public void set_commented_movie(Movie commented_movie){
+		this.commented_movie = commented_movie;
 	}
 }

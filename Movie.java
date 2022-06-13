@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import java.util.Set;
  *  @author Alperen and Kaan
 */
 
-public class Movie {
+public class Movie implements Serializable{
   private String show_id;
   private String genre;
   private String director;
