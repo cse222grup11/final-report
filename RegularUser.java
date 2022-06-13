@@ -65,13 +65,31 @@ public class RegularUser {
 			temp.insert(line);
 
 		}
+		sc.close();
 	}
 
 
     public String getName() {
 		return name;
 	}
-	public void setName(String name) {
+
+	private boolean containsNum(String phrase){
+
+		char [] letters = phrase.toCharArray();
+        for(char ch : letters)
+            if(Character.isDigit(ch))
+                return true;
+        return false;
+    }
+
+    public void setName(String name) {
+
+		Scanner sc = new Scanner(System.in);
+        while(containsNum(name)){
+            System.out.println("Enter your name again : ");
+			name = sc.nextLine();
+        }
+		
 		this.name = name;
 		sc.close();
 	}
