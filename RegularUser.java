@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  * update_userDb methodu tekrar gözden geçirilecek!!
@@ -72,12 +73,21 @@ public class RegularUser {
 	}
 	public void setName(String name) {
 		this.name = name;
+		sc.close();
 	}
+	
 	public String getSurname() {
 		return surname;
 	}
 	public void setSurname(String surname) {
+
+		Scanner sc = new Scanner(System.in);
+        while(containsNum(surname)){
+            System.out.println("Enter your surname again : ");
+			surname = sc.nextLine();
+        }
 		this.surname = surname;
+		sc.close();
 	}
 	public int getAge() {
 		return age;
@@ -88,14 +98,33 @@ public class RegularUser {
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(String email) {	//checks the validity of the email address
+
+		Scanner sc = new Scanner(System.in);
+		while(!isValid(email)){
+			System.out.println("Please write a valid e-mail address : ");
+			email = sc.nextLine();
+		}
 		this.email = email;
+		sc.close();
 	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	private static boolean isValid(String eMail){
+		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                            "[a-zA-Z0-9_+&*-]+)*@" +
+                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                            "A-Z]{2,7}$";
+                              
+        Pattern pat = Pattern.compile(emailRegex);
+        if (eMail == null)
+            return false;
+        return pat.matcher(eMail).matches();
 	}
 
 	
