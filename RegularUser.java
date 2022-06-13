@@ -5,6 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * update_userDb methodu tekrar gözden geçirilecek!!
+ * Watchlist Queue SkipList olarak değiştirildi kontrol edilmesi gerek!!
+ * Geri kalan fonksiyonlarda complex bir şey mainde kontrol edilmesi gerek
+ * 
+ */
+
 public class RegularUser {
 
     private String name;
