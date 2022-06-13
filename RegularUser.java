@@ -1,6 +1,7 @@
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,6 +14,8 @@ public class RegularUser {
     private String password;
 
 	private SkipList<String> temp = new SkipList<>();
+	private List<String> fav = new LinkedList<>();
+	
 
 	public RegularUser()
 	{
