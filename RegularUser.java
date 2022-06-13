@@ -15,7 +15,7 @@ public class RegularUser {
 
 	private SkipList<String> temp = new SkipList<>();
 	private List<String> fav = new LinkedList<>();
-	
+	private AVLTree<String> buffer = new AVLTree<>();
 
 	public RegularUser()
 	{
@@ -122,6 +122,43 @@ public class RegularUser {
 		}
 	}
 	
+
+	
+	public AVLTree<String> get_history()
+	{
+		return buffer;
+	}
+
+	public boolean add_to_history(String movie)
+	{
+		buffer.add(movie);
+		return true;
+	}
+
+	public boolean remove_from_history(String movie)
+	{
+		if(buffer.remove(movie))
+		return true;
+		
+		return false;
+	}
+
+
+	public List<String> get_favourities()
+	{
+		return fav;
+	}
+	
+	public boolean add_to_favourities(String movie)
+	{
+		fav.add(movie);
+
+		return true;
+	}
+
+	boolean remove_from_favourites(String movie){
+		return fav.remove(movie);
+	}
 
     
 
